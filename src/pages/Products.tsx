@@ -16,8 +16,8 @@ const Products: React.FC = () => {
       <TextDisplay text="At Munamii Cakery, we don't just bake desserts; we create moments of joy! Our cupcakes and wedding cakes are handcrafted with love and the finest ingredients, ensuring every bite is a delightful experience."/>
       <TextDisplay text="Discover our mouthwatering flavors that are sure to tantalize your taste buds! Whether you're celebrating a special occasion or simply treating yourself, we have something for everyone."/>
       </Wrapper>
-      <ProductSlider title="Delicious Cupcakes" products={cupcakes} settings={homeSliderSettings} slidesToShow={4} />
-      <ProductSlider title="Elegant Wedding Cakes" products={weddingCakes} settings={homeSliderSettings}  slidesToShow={4} />
+      <ProductSlider title="Delicious Cupcakes" products={cupcakes} settings={homeSliderSettings} slidesToShow={5} />
+      <ProductSlider title="Elegant Wedding Cakes" products={weddingCakes} settings={homeSliderSettings} slidesToShow={5} />
       <img
         src='/images/munamiiLogo.png'
         alt='munamiiLogo'
