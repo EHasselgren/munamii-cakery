@@ -18,7 +18,7 @@ const ProductSlider: React.FC<ProductSliderProps> = ({
   className = '',
 }) => {
   const sliderSettings = {
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 400,
     slidesToShow,
@@ -46,7 +46,7 @@ const ProductSlider: React.FC<ProductSliderProps> = ({
 
   return (
     <div className={`mt-8 ${className}`}>
-      <h3 className="text-3xl font-whimsical font-semibold mb-8 text-[#a72056] text-center">{title}:</h3>
+      <h3 className="text-6xl font-whimsical font-semibold mb-8 text-[#008080] text-center">{title}:</h3>
       <Slider {...sliderSettings} className='rounded-lg'>
         {products.map(product => (
           <ProductCard

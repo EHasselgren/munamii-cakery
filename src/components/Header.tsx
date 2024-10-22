@@ -3,31 +3,33 @@ import { Link } from 'react-router-dom';
 
 const Header: React.FC = () => {
   return (
-    <header className="bg-[#e895b5] p-6 shadow-lg">
-      <nav className="container mx-auto flex justify-between items-center">
-        <img
-          src="/images/munamiiLogo.png"
-          alt="Munamii Logo"
-          className="h-14 w-auto object-contain"
-        />
-        <ul className="flex space-x-6">
+    <header className="bg-[#008080] p-3 shadow-lg  w-full">
+      <nav className=" flex justify-between items-center  w-full">
+        <div className="flex-shrink-0">
+          <img
+            src="/images/munamiiLogo.png"
+            alt="Munamii Logo"
+            className="h-[100px] left-0 top-0  object-contain "
+          />
+        </div>
+        <ul className="flex space-x-6 justify-between top-0">
           <li>
-            <Link to="/" className="font-whimsical text-3xl hover:text-[#e895b5] transition duration-300 ease-in-out text-white">
+            <Link to="/" className="font-whimsical text-5xl text-white hover:text-[#FFCAD4] transition duration-300 ease-in-out">
               Home
             </Link>
           </li>
           <li>
-            <Link to="/about" className="font-whimsical text-3xl hover:text-[#e895b5] transition duration-300 ease-in-out text-white">
+            <Link to="/about" className="font-whimsical text-5xl text-white hover:text-[#FFCAD4] transition duration-300 ease-in-out">
               About Us
             </Link>
           </li>
           <li>
-            <Link to="/products" className="font-whimsical text-3xl hover:text-[#e895b5] transition duration-300 ease-in-out text-white">
+            <Link to="/products" className="font-whimsical text-5xl text-white hover:text-[#FFCAD4] transition duration-300 ease-in-out">
               Products
             </Link>
           </li>
           <li>
-            <Link to="/contact" className="font-whimsical text-3xl hover:text-[#e895b5] transition duration-300 ease-in-out text-white">
+            <Link to="/contact" className="font-whimsical text-5xl text-white hover:text-[#FFCAD4] transition duration-300 ease-in-out">
               Contact
             </Link>
           </li>

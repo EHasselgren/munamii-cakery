@@ -11,7 +11,7 @@ const App: React.FC = () => {
   return (
     <Router>
       <div 
-        className="bg-[url('/public/images/background1.jpeg')] bg-cover bg-center min-h-screen flex flex-col">
+        className="bg-[url('/public/images/background2.jpg')] bg-cover bg-center min-h-screen flex flex-col">
         <Header />
         <main className="flex-grow">
           <Routes>
