@@ -45,16 +45,17 @@ const ProductSlider: React.FC<ProductSliderProps> = ({
   };
 
   return (
-    <div className={`mt-8 ${className}`}>
+    <div className={`mt-8 ${className} relative p-4 overflow-visible`}>
       <h3 className="text-6xl font-whimsical font-semibold mb-8 text-[#008080] text-center">{title}:</h3>
-      <Slider {...sliderSettings} className='rounded-lg'>
+      <Slider {...sliderSettings} className='rounded-lg overflow-visible'> 
         {products.map(product => (
-          <ProductCard
-            key={product.id}
-            title={product.title}
-            price={product.price}
-            image={product.image}
-          />
+          <div key={product.id} className="p-2 overflow-visible"> 
+            <ProductCard
+              title={product.title}
+              price={product.price}
+              image={product.image}
+            />
+          </div>
         ))}
       </Slider>
     </div>
@@ -62,3 +63,4 @@ const ProductSlider: React.FC<ProductSliderProps> = ({
 };
 
 export default ProductSlider;
+

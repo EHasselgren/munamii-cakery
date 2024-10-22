@@ -5,7 +5,7 @@ import TextDisplay from '../components/TextDisplay';
 import ProductSlider from '../components/ProductSlider';
 import { cupcakes, weddingCakes } from '../data/products';
 import { defaultSliderSettings } from '../utils/sliderSettings';
-import TransparentWrapper from '../components/TransparentWrapper';
+import TransparentWrapper from '../components/Wrapper';
 
 const Products: React.FC = () => {
 
@@ -18,6 +18,11 @@ const Products: React.FC = () => {
       </TransparentWrapper>
       <ProductSlider title="Delicious Cupcakes" products={cupcakes} settings={defaultSliderSettings} slidesToShow={4} />
       <ProductSlider title="Elegant Wedding Cakes" products={weddingCakes} settings={defaultSliderSettings} slidesToShow={4} />
+      <img
+        src='/images/munamiiLogo.png'
+        alt='munamiiLogo'
+        className="w-48 h-auto object-cover rounded-full pt-12  mx-auto"
+      />
     </PageCard>
   );
 };

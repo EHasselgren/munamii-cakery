@@ -2,7 +2,7 @@ import React from 'react';
 import PageCard from '../components/PageCard';
 import PageHeader from '../components/PageHeader';
 import TextDisplay from '../components/TextDisplay';
-import TransparentWrapper from '../components/TransparentWrapper';
+import TransparentWrapper from '../components/Wrapper';
 
 const Contact: React.FC = () => {
   return (
@@ -15,6 +15,11 @@ const Contact: React.FC = () => {
       <TextDisplay text="Email: munamiicakery@gmail.com"/>
       <TextDisplay text="We look forward to creating something special for you!"/>
       </TransparentWrapper>
+      <img
+        src='/images/munamiiLogo.png'
+        alt='munamiiLogo'
+        className="w-48 h-auto object-cover rounded-full pt-12 mx-auto"
+      />
     </PageCard>
   );
 };

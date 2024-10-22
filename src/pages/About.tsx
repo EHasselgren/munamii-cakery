@@ -2,7 +2,7 @@ import React from 'react';
 import PageCard from '../components/PageCard';
 import PageHeader from '../components/PageHeader';
 import TextDisplay from '../components/TextDisplay';
-import TransparentWrapper from '../components/TransparentWrapper';
+import TransparentWrapper from '../components/Wrapper';
 
 const About: React.FC = () => {
   return (
