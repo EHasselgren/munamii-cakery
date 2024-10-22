@@ -1,13 +1,14 @@
+// src/components/TextDisplay.tsx
 import React from 'react';
 
 interface TextDisplayProps {
-  text: string;     
-  className?: string; 
+  text: string;
+  className?: string;
 }
 
 const TextDisplay: React.FC<TextDisplayProps> = ({ text, className }) => {
   return (
-    <p className={`text-pink-600 font-semibold text-lg ${className}`}>
+    <p className={`font-quicksand text-[#a72056] text-lg leading-relaxed max-w-2xl mx-auto ${className}`}>
       {text}
     </p>
   );

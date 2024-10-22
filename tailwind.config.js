@@ -6,7 +6,9 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Roboto', 'sans-serif'],
+        sans: ['Poppins', 'sans-serif'],
+        whimsical: ['Dancing Script', 'cursive'],
+        quicksand: ['Quicksand', 'sans-serif'],
       },
     },
   },

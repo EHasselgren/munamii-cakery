@@ -5,45 +5,55 @@ import Slider from 'react-slick';
 interface ProductSliderProps {
   title: string;
   products: { id: number; title: string; price: string; image: string }[];
-  settings: object;
+  settings?: object;
+  slidesToShow?: number;
+  className?: string;
 }
 
-const ProductSlider: React.FC<ProductSliderProps> = ({ title, products, settings }) => {
-  // Define default settings or merge with provided settings
+const ProductSlider: React.FC<ProductSliderProps> = ({
+  title,
+  products,
+  settings = {},
+  slidesToShow = 4,
+  className = '',
+}) => {
   const sliderSettings = {
     dots: true,
     infinite: true,
-    speed: 500,
-    slidesToShow: 4, // Show 3 slides at once
+    speed: 400,
+    slidesToShow,
     slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 4000,
     responsive: [
       {
-        breakpoint: 768, // Adjust for smaller screens
+        breakpoint: 768,
         settings: {
-          slidesToShow: 3,
+          slidesToShow: Math.min(slidesToShow, 3),
           slidesToScroll: 1,
         },
       },
       {
-        breakpoint: 480, // Adjust for very small screens
+        breakpoint: 480,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: Math.min(slidesToShow, 1),
           slidesToScroll: 1,
         },
       },
     ],
+    ...settings,
   };
 
   return (
-    <div className="my-8">
-      <h3 className="text-2xl font-semibold my-2 text-pink-600 text-center ">{title}</h3>
-      <Slider {...sliderSettings} className='rounded-lg '>
+    <div className={`mt-8 ${className}`}>
+      <h3 className="text-3xl font-whimsical font-semibold mb-8 text-[#a72056] text-center">{title}:</h3>
+      <Slider {...sliderSettings} className='rounded-lg'>
         {products.map(product => (
-          <ProductCard 
-            key={product.id} 
-            title={product.title} 
-            price={product.price} 
-            image={product.image} 
+          <ProductCard
+            key={product.id}
+            title={product.title}
+            price={product.price}
+            image={product.image}
           />
         ))}
       </Slider>
@@ -52,4 +62,3 @@ const ProductSlider: React.FC<ProductSliderProps> = ({ title, products, settings
 };
 
 export default ProductSlider;
-

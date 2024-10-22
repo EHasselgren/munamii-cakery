@@ -5,17 +5,20 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import About from './pages/About';
 import Products from './pages/Products';
+import Contact from './pages/Contact';
 
 const App: React.FC = () => {
   return (
     <Router>
-      <div className="bg-gradient-to-b from-white to-pink-300 min-h-screen flex flex-col"> 
+      <div 
+        className="bg-[url('/public/images/background1.jpeg')] bg-cover bg-center min-h-screen flex flex-col">
         <Header />
-        <main className="flex-grow"> 
+        <main className="flex-grow">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/products" element={<Products />} />
+            <Route path="/contact" element={<Contact />} />
           </Routes>
         </main>
         <Footer />
@@ -25,3 +28,4 @@ const App: React.FC = () => {
 };
 
 export default App;
+

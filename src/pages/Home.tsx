@@ -3,8 +3,8 @@ import PageHeader from '../components/PageHeader';
 import ProductSlider from '../components/ProductSlider';
 import { cupcakes, weddingCakes } from '../data/products';
 import TextDisplay from '../components/TextDisplay';
+import PageCard from '../components/PageCard';
 
-// Function to shuffle an array
 const shuffleArray = (array: any[]) => {
   for (let i = array.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
@@ -14,12 +14,10 @@ const shuffleArray = (array: any[]) => {
 };
 
 const Home: React.FC = () => {
-
   const settings = {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 2,
     slidesToScroll: 1,
     responsive: [
       {
@@ -36,14 +34,19 @@ const Home: React.FC = () => {
   const shuffledProducts = shuffleArray(combinedProducts);
 
   return (
-    <div className="container mx-auto my-8">
+    <PageCard>
       <PageHeader title="Welcome to Munamii Cakery" />
-      <TextDisplay text="  We create delicious cupcakes and wedding cakes made with love!" className="text-center" />
-  
-      <ProductSlider title="Our Delicious Products" products={shuffledProducts} settings={settings} />
-    </div>
+      <TextDisplay text="At Munamii Cakery, we don’t just bake desserts; we craft unforgettable moments!" className="text-center my-4" />
+      <TextDisplay text="With over a decade of experience, our passion for baking shines through in every handcrafted cupcake and wedding cake." className="text-center my-4" />
+      <TextDisplay text="Every treat is made to order with the finest ingredients. Let us help you celebrate life's sweetest moments—contact us today for a custom quote!" className="text-center my-4" />
+      <ProductSlider title="Our Irresistible Offerings" products={shuffledProducts} settings={settings} slidesToShow={3} className='mb-10' />
+    </PageCard>
   );
 };
 
 export default Home;
+
+
+
+
 
