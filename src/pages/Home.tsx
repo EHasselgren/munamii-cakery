@@ -5,7 +5,7 @@ import { cupcakes, weddingCakes } from '../data/products';
 import TextDisplay from '../components/TextDisplay';
 import PageCard from '../components/PageCard';
 import { homeSliderSettings } from '../utils/sliderSettings'; 
-import TransparentWrapper from '../components/Wrapper'; 
+import Wrapper from '../components/Wrapper'; 
 
 const shuffleArray = (array: any[]) => {
   for (let i = array.length - 1; i > 0; i--) {
@@ -22,12 +22,12 @@ const Home: React.FC = () => {
 
   return (
     <PageCard>
-      <TransparentWrapper>
+      <Wrapper>
       <PageHeader title="Welcome to Munamii Cakery"/>
       <TextDisplay text="At Munamii Cakery, we don’t just bake desserts; we craft unforgettable moments!"/>
       <TextDisplay text="With over a decade of experience, our passion for baking shines through in every handcrafted cupcake and wedding cake." />
       <TextDisplay text="Every treat is made to order with the finest ingredients. Let us help you celebrate life's sweetest moments—contact us today for a custom quote!" />
-      </TransparentWrapper>
+      </Wrapper>
       <ProductSlider title="Our Irresistible Offerings" products={shuffledProducts} settings={homeSliderSettings} slidesToShow={4} className='mb-10' />
       <img
         src='/images/munamiiLogo.png'
