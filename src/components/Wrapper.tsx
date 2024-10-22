@@ -7,7 +7,7 @@ interface WrapperProps {
 
 const Wrapper: React.FC<WrapperProps> = ({ children, className = '' }) => {
   return (
-    <div className={`bg-white p-[140px] mx-2 rounded-full shadow-md ${className}`}>
+    <div className={`bg-white mx-auto rounded-full shadow-md flex flex-col items-center justify-center p-10 ${className}`} style={{ width: '600px', height: '600px' }}>
       {children}
     </div>
   );

@@ -18,7 +18,7 @@ const Contact: React.FC = () => {
       <img
         src='/images/munamiiLogo.png'
         alt='munamiiLogo'
-        className="w-48 h-auto object-cover rounded-full pt-12 mx-auto"
+        className="w-80 h-auto object-cover rounded-full pt-12 mx-auto"
       />
     </PageCard>
   );
