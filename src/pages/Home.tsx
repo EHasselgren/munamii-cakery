@@ -28,7 +28,7 @@ const Home: React.FC = () => {
       <TextDisplay text="With over a decade of experience, our passion for baking shines through in every handcrafted cupcake and wedding cake." />
       <TextDisplay text="Every treat is made to order with the finest ingredients. Let us help you celebrate life's sweetest moments—contact us today for a custom quote!" />
       </TransparentWrapper>
-      <ProductSlider title="Our Irresistible Offerings" products={shuffledProducts} settings={homeSliderSettings} slidesToShow={3} className='mb-10' />
+      <ProductSlider title="Our Irresistible Offerings" products={shuffledProducts} settings={homeSliderSettings} slidesToShow={4} className='mb-10' />
       <img
         src='/images/munamiiLogo.png'
         alt='munamiiLogo'
