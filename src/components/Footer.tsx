@@ -11,7 +11,7 @@ const Footer: React.FC = () => {
         <ul className="flex space-x-6 mt-4 md:mt-0">
           <li>
             <Link to="/" className="font-whimsical text-3xl text-white hover:text-[#FFCAD4] transition duration-300 ease-in-out">
-              Home
+              Facebook
             </Link>
           </li>
           <li>

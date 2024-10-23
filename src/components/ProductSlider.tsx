@@ -2,6 +2,7 @@ import React from 'react';
 import ProductCard from './ProductCard';
 import Slider from 'react-slick';
 import { SampleNextArrow, SamplePrevArrow } from './Arrow'; 
+import axios from 'axios';
 
 interface ProductSliderProps {
   title: string;
@@ -48,6 +49,16 @@ const ProductSlider: React.FC<ProductSliderProps> = ({
     ...settings,
   };
 
+  const handleAddToBag = async (productId: number) => {
+    try {
+      // Make a POST request to add the product to the shopping bag
+      await axios.post('/api/shoppingBag', { productId });
+      console.log(`Product ${productId} added to the shopping bag!`);
+    } catch (error) {
+      console.error('Failed to add product to the shopping bag', error);
+    }
+  };
+
   return (
     <div className={`mt-8 ${className} relative py-4`}>
       <h3 className="text-4xl font-whimsical font-semibold mb-12 text-[#008080] text-center">{title}:</h3>
@@ -58,6 +69,8 @@ const ProductSlider: React.FC<ProductSliderProps> = ({
               title={product.title}
               price={product.price}
               image={product.image}
+              id={product.id} // Pass the id as prop
+              onAddToBag={handleAddToBag} // Pass the handler
             />
           </div>
         ))}
@@ -67,4 +80,3 @@ const ProductSlider: React.FC<ProductSliderProps> = ({
 };
 
 export default ProductSlider;
-

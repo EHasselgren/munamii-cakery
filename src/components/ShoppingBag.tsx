@@ -47,11 +47,7 @@ const ShoppingBag: React.FC = () => {
         <div className="flex flex-wrap justify-center">
           {items.map(item => (
             <div key={item._id} className="flex flex-col items-center">
-              <ProductCard
-                title={item.productId.title}
-                price={item.productId.price}
-                image={item.productId.image}
-              />
+          <h1> {item.productId.title}</h1>
               <div className="text-center mt-2">
                 <p className="text-xl font-bold text-[#008080]">Quantity: {item.quantity}</p>
                 <button 
