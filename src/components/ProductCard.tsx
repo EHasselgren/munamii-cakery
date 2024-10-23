@@ -21,7 +21,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ title, price, image, onAddToB
 
   return (
     <div
-      className="border bg-white rounded-xl shadow-lg w-[260px] m-4 transition-transform transform hover:scale-105 flex flex-col justify-between h-[380px] overflow-hidden" // Changed from overflow-visible to overflow-hidden
+      className="border bg-white rounded-xl shadow-lg w-[260px] m-4 transition-transform transform hover:scale-105 flex flex-col justify-between h-[380px] overflow-hidden"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >

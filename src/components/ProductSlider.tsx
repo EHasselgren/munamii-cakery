@@ -69,8 +69,8 @@ const ProductSlider: React.FC<ProductSliderProps> = ({
               title={product.title}
               price={product.price}
               image={product.image}
-              id={product.id} // Pass the id as prop
-              onAddToBag={handleAddToBag} // Pass the handler
+              id={product.id} 
+              onAddToBag={handleAddToBag}
             />
           </div>
         ))}

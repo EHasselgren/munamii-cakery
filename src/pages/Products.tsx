@@ -8,21 +8,18 @@ import { homeSliderSettings } from '../utils/sliderSettings';
 import Wrapper from '../components/Wrapper';
 
 const Products: React.FC = () => {
-  const [cupcakes, setCupcakes] = useState<any[]>([]); // Default empty array
-  const [weddingCakes, setWeddingCakes] = useState<any[]>([]); // Default empty array
+  const [cupcakes, setCupcakes] = useState<any[]>([]);
+  const [weddingCakes, setWeddingCakes] = useState<any[]>([]); 
 
-  // Fetch data from API
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const cupcakeResponse = await axios.get('http://localhost:5000/api/cupcakes'); // For cupcakes
-        const weddingCakeResponse = await axios.get('http://localhost:5000/api/wedding-cakes'); // For wedding cakes
+        const cupcakeResponse = await axios.get('http://localhost:5000/api/cupcakes');
+        const weddingCakeResponse = await axios.get('http://localhost:5000/api/wedding-cakes'); 
 
-        // Check the response data
         console.log("Cupcake Response: ", cupcakeResponse.data);
         console.log("Wedding Cake Response: ", weddingCakeResponse.data);
         
-        // Ensure we're setting arrays
         setCupcakes(Array.isArray(cupcakeResponse.data) ? cupcakeResponse.data : []);
         setWeddingCakes(Array.isArray(weddingCakeResponse.data) ? weddingCakeResponse.data : []);
       } catch (error) {
@@ -31,7 +28,7 @@ const Products: React.FC = () => {
     };
 
     fetchData();
-  }, []); // Empty dependency array to run only on mount
+  }, []); 
 
   return (
     <PageCard>

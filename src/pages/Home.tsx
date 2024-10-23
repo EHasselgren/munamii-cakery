@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios'; // Import Axios
+import axios from 'axios'; 
 import PageHeader from '../components/PageHeader';
 import ProductSlider from '../components/ProductSlider';
 import TextDisplay from '../components/TextDisplay';
