@@ -2,12 +2,6 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronRight, faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 
-interface ArrowProps {
-  className: string;
-  style: React.CSSProperties;
-  onClick: () => void;
-}
-
 export const SamplePrevArrow: React.FC<any> = (props) => {
     const { className, style, onClick } = props;
     return (
