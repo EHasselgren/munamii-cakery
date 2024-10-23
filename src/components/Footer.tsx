@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons';
 
 const Footer: React.FC = () => {
   return (
@@ -10,13 +12,13 @@ const Footer: React.FC = () => {
         </p>
         <ul className="flex space-x-6 mt-4 md:mt-0">
           <li>
-            <Link to="/" className="font-whimsical text-3xl text-white hover:text-[#FFCAD4] transition duration-300 ease-in-out">
-              Facebook
+            <Link to="/" className="flex items-center font-whimsical text-3xl text-white hover:text-[#FFCAD4] transition duration-300 ease-in-out">
+              <FontAwesomeIcon icon={faFacebook} className="mr-2" />
             </Link>
           </li>
           <li>
-            <Link to="/contact" className="font-whimsical text-3xl text-white hover:text-[#FFCAD4] transition duration-300 ease-in-out">
-              Instagram
+            <Link to="/" className="flex items-center font-whimsical text-3xl text-white hover:text-[#FFCAD4] transition duration-300 ease-in-out">
+              <FontAwesomeIcon icon={faInstagram} className="mr-2" />
             </Link>
           </li>
         </ul> 
@@ -26,6 +28,3 @@ const Footer: React.FC = () => {
 };
 
 export default Footer;
-
-
-
