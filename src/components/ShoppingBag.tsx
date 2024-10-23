@@ -4,6 +4,8 @@ interface ShoppingItem {
   id: number;
   itemType: string;
   quantity: number;
+  price: number;
+  title: string;
 }
 
 const ShoppingBag: React.FC = () => {
@@ -19,7 +21,6 @@ const ShoppingBag: React.FC = () => {
     try {
       const userId = 'some-user-id';  // Replace with actual userId logic
 
-      // Send the shopping bag to the backend
       const response = await fetch('/api/shoppingbag', {
         method: 'POST',
         headers: {
@@ -27,7 +28,7 @@ const ShoppingBag: React.FC = () => {
         },
         body: JSON.stringify({
           userId,
-          items: shoppingBag,  // Pass the items from localStorage
+          items: shoppingBag, 
         }),
       });
 
@@ -35,7 +36,6 @@ const ShoppingBag: React.FC = () => {
         throw new Error('Failed to confirm purchase');
       }
 
-      // Clear localStorage and reset the bag in state after successful purchase
       localStorage.removeItem('shoppingBag');
       setShoppingBag([]);
       alert('Purchase confirmed!');
@@ -53,7 +53,7 @@ const ShoppingBag: React.FC = () => {
         <ul>
           {shoppingBag.map(item => (
             <li key={`${item.id}-${item.itemType}`}>
-              {item.itemType} - Quantity: {item.quantity}
+              {item.itemType} - Quantity: {item.quantity} Price: {item.price} Title: {item.title}
             </li>
           ))}
         </ul>

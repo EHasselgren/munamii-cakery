@@ -28,7 +28,6 @@ const ProductSlider: React.FC<ProductSliderProps> = ({
     autoplaySpeed: 4000,
     nextArrow: <SampleNextArrow to="next" />,
     prevArrow: <SamplePrevArrow to="prev" />,
-
     responsive: [
       {
         breakpoint: 768,
@@ -53,7 +52,7 @@ const ProductSlider: React.FC<ProductSliderProps> = ({
       <h3 className="text-4xl font-whimsical font-semibold mb-12 text-[#008080] text-center">{title}:</h3>
       <Slider {...sliderSettings} className="rounded-lg"> 
         {products.map(product => (
-          <div key={product.id} className=""> 
+          <div key={`${product.id}`} className=""> 
             <ProductCard
               title={product.title}
               price={product.price}
