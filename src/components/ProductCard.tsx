@@ -33,13 +33,13 @@ const addToLocalBag = (productId: number, itemType: string, title: string, price
 const ProductCard: React.FC<ProductCardProps> = ({ title, price, image, id, itemType }) => {
   return (
     <div
-      className="border bg-white rounded-xl shadow-lg w-[220px] h-[300px] m-4 transition-transform transform hover:scale-105 flex flex-col justify-between overflow-hidden"
+      className="border bg-white rounded-xl  w-[220px] h-[300px] m-4 transition-transform transform hover:scale-105 flex flex-col justify-between overflow-hidden"
     >
       <div className="flex flex-col items-center py-4">
         <img
           src={image}
           alt={title}
-          className="w-[140px] h-[140px] object-cover rounded-full mb-1"
+          className="w-[140px] h-[140px] object-cover rounded-full mb-"
         />
         <div className="text-center flex-grow">
           <h4 className="text-lg font-bold text-[#008080] font-whimsical mb-2 overflow-hidden whitespace-nowrap text-ellipsis">

@@ -19,7 +19,6 @@ const Home: React.FC = () => {
     return array;
   };
   
-  
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -41,24 +40,23 @@ const Home: React.FC = () => {
 
   return (
     <PageCard>
-      <Wrapper>
+      <Wrapper className="flex-grow flex flex-col items-center justify-center">
         <PageHeader title="Welcome to Munamii Cakery" />
         <TextDisplay text="At Munamii Cakery, we don’t just bake desserts; we craft unforgettable moments!" />
         <TextDisplay text="With over a decade of experience, our passion for baking shines through in every handcrafted cupcake and wedding cake." />
         <TextDisplay text="Every treat is made to order with the finest ingredients. Let us help you celebrate life's sweetest moments—contact us today for a custom quote!" />
       </Wrapper>
-      <ProductSlider title="Our Irresistible Offerings" products={shuffledProducts} settings={homeSliderSettings} slidesToShow={6}  />
+      <ProductSlider title="Our Irresistible Offerings" products={shuffledProducts} settings={homeSliderSettings} slidesToShow={6} />
       <img
         src='/images/munamiiLogo.png'
         alt='munamiiLogo'
-        className="w-80 h-auto object-cover rounded-full py-6 mx-auto"
+        className="w-80 h-auto object-cover rounded-full mb-2 py-6 mx-auto"
       />
     </PageCard>
   );
 };
 
 export default Home;
-
 
 
 

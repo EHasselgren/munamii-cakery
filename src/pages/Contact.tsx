@@ -7,7 +7,7 @@ import Wrapper from '../components/Wrapper';
 const Contact: React.FC = () => {
   return (
     <PageCard>
-      <Wrapper className='h-[500px] w-[500px]'>
+      <Wrapper className='h-[400px] w-[400px]'>
       <PageHeader title="Contact Us"/>
       <TextDisplay text="Have questions or inquiries? We're here to help!"/>
       <TextDisplay text="Feel free to reach out to us via"/>
@@ -18,7 +18,7 @@ const Contact: React.FC = () => {
       <img
         src='/images/munamiiLogo.png'
         alt='munamiiLogo'
-        className="w-80 h-auto object-cover rounded-full pt-12 mx-auto"
+        className="w-60 h-auto object-cover rounded-full  mx-auto"
       />
     </PageCard>
   );

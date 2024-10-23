@@ -7,8 +7,8 @@ interface PageCardProps {
 
 const PageCard: React.FC<PageCardProps> = ({ children, className = '' }) => {
   return (
-    <div className="flex-grow container mx-auto my-12 flex items-center justify-center min-h-screen">
-      <div className={`w-[full] max-w-full rounded-lg  ${className}`}>
+    <div className="flex flex-col min-h-screen container mx-auto my-0 flex-grow items-center justify-center">
+      <div className={`w-full max-w-full rounded-lg ${className}`}>
         {children}
       </div>
     </div>

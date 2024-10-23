@@ -48,8 +48,8 @@ const ProductSlider: React.FC<ProductSliderProps> = ({
   };
 
   return (
-    <div className={`mt-6 ${className} relative py-4`}>
-      <h3 className="text-4xl font-whimsical font-semibold mb-12 text-[#008080] text-center">{title}:</h3>
+    <div className={`${className} relative py-4`}>
+      <h3 className="text-4xl font-whimsical font-semibold mb-2 text-[#008080] text-center">{title}:</h3>
       <Slider {...sliderSettings} className="rounded-lg"> 
         {products.map(product => (
           <div key={`${product.id}`} className=""> 

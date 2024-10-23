@@ -33,7 +33,7 @@ const Products: React.FC = () => {
   return (
     <PageCard>
       <Wrapper>
-        <PageHeader title="Indulge in Our Irresistible Treats!" className="pb-2 mt-[-10px]" />
+        <PageHeader title="Indulge in Our Irresistible Treats!" className="" />
         <TextDisplay text="At Munamii Cakery, we don't just bake desserts; we create moments of joy! Our cupcakes and wedding cakes are handcrafted with love and the finest ingredients, ensuring every bite is a delightful experience." />
         <TextDisplay text="Discover our mouthwatering flavors that are sure to tantalize your taste buds! Whether you're celebrating a special occasion or simply treating yourself, we have something for everyone." />
       </Wrapper>
@@ -42,7 +42,7 @@ const Products: React.FC = () => {
       <img
         src='/images/munamiiLogo.png'
         alt='munamiiLogo'
-        className="w-80 h-auto object-cover rounded-full pt-12 mx-auto"
+        className="w-80 h-auto object-cover rounded-full mb-8 mt-4 mx-auto"
       />
     </PageCard>
   );
