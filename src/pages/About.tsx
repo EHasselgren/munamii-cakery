@@ -16,7 +16,7 @@ const About: React.FC = () => {
       <img
         src='/images/munamiiLogo.png'
         alt='munamiiLogo'
-        className="w-80 h-auto object-cover rounded-full py-6 mx-auto"
+        className="w-80 h-auto object-cover rounded-full py-10 mx-auto"
       />
     </PageCard>
   );
