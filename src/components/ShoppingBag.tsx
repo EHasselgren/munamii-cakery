@@ -1,68 +1,69 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import TextDisplay from '../components/TextDisplay';
 
-interface ShoppingBagItem {
-  _id: string;
-  productId: {
-    title: string;
-    price: string;
-    image: string;
-  };
+interface ShoppingItem {
+  id: number;
+  itemType: string;
   quantity: number;
 }
 
 const ShoppingBag: React.FC = () => {
-  const [items, setItems] = useState<ShoppingBagItem[]>([]);
+  const [shoppingBag, setShoppingBag] = useState<ShoppingItem[]>([]);
 
   useEffect(() => {
-    const fetchShoppingBag = async () => {
-      try {
-        const userId = 'guest_user_123'; 
-        const response = await axios.get(`http://localhost:5000/api/shoppingbag/${userId}`);
-        setItems(response.data.items); 
-      } catch (error) {
-        console.error('Error fetching shopping bag:', error);
-      }
-    };
-
-    fetchShoppingBag();
+    // Fetch the items from localStorage when the component mounts
+    const bag = JSON.parse(localStorage.getItem('shoppingBag') || '[]');
+    setShoppingBag(bag);
   }, []);
 
-  const handleRemoveItem = async (id: string) => {
+  const handleConfirmPurchase = async () => {
     try {
-      await axios.delete(`http://localhost:5000/api/shoppingbag/${id}`);
-      setItems(items.filter(item => item._id !== id));
+      const userId = 'some-user-id';  // Replace with actual userId logic
+
+      // Send the shopping bag to the backend
+      const response = await fetch('/api/shoppingbag', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          userId,
+          items: shoppingBag,  // Pass the items from localStorage
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to confirm purchase');
+      }
+
+      // Clear localStorage and reset the bag in state after successful purchase
+      localStorage.removeItem('shoppingBag');
+      setShoppingBag([]);
+      alert('Purchase confirmed!');
     } catch (error) {
-      console.error('Error removing item:', error);
+      console.error(error);
     }
   };
 
   return (
     <div>
-      <TextDisplay text="Your Shopping Bag" className="mb-6" />
-      {items.length === 0 ? (
-        <TextDisplay text="is empty." className="text-red-500" />
+      <h2>Your Shopping Bag</h2>
+      {shoppingBag.length === 0 ? (
+        <p>No items in your bag</p>
       ) : (
-        <div className="flex flex-wrap justify-center">
-          {items.map(item => (
-            <div key={item._id} className="flex flex-col items-center">
-              <h1>{item.productId.title}</h1>
-              <div className="text-center mt-2">
-                <p className="text-xl font-bold text-[#008080]">Quantity: {item.quantity}</p>
-                <button 
-                  className="mt-2 bg-red-500 text-white rounded-lg px-4 py-2"
-                  onClick={() => handleRemoveItem(item._id)}
-                >
-                  Remove
-                </button>
-              </div>
-            </div>
+        <ul>
+          {shoppingBag.map(item => (
+            <li key={`${item.id}-${item.itemType}`}>
+              {item.itemType} - Quantity: {item.quantity}
+            </li>
           ))}
-        </div>
+        </ul>
       )}
+      <button onClick={handleConfirmPurchase}>
+        Confirm Purchase
+      </button>
     </div>
   );
 };
 
 export default ShoppingBag;
+
