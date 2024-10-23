@@ -33,6 +33,11 @@ const Header: React.FC = () => {
               Contact
             </Link>
           </li>
+          <li>
+            <Link to="/shoppingBag" className="font-whimsical text-5xl text-white hover:text-[#FFCAD4] transition duration-300 ease-in-out">
+              Bag
+            </Link>
+          </li>
         </ul>
       </nav>
     </header>
