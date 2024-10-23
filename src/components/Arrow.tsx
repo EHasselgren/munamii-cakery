@@ -12,7 +12,7 @@ export const SamplePrevArrow: React.FC<any> = (props) => {
     const { className, style, onClick } = props;
     return (
       <div onClick={onClick} className={`arrow ${className}`} style={{ ...style, display: 'block' }}>
-      <FontAwesomeIcon icon={faChevronLeft} style={{ fontSize: '24px', color: '#008080' }} />
+      <FontAwesomeIcon icon={faChevronLeft} style={{ fontSize: '30px', color: '#008080' }} />
       </div>
     );
   };
@@ -21,7 +21,7 @@ export const SamplePrevArrow: React.FC<any> = (props) => {
     const { className, style, onClick } = props;
     return (
       <div onClick={onClick} className={`arrow ${className}`} style={{ ...style, display: 'block' }}>
-      <FontAwesomeIcon icon={faChevronRight} style={{ fontSize: '24px', color: '#008080' }} />
+      <FontAwesomeIcon icon={faChevronRight} style={{ fontSize: '30px', color: '#008080' }} />
       </div>
     );
   };

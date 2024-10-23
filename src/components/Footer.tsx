@@ -12,13 +12,13 @@ const Footer: React.FC = () => {
         </p>
         <ul className="flex space-x-6 mt-4 md:mt-0">
           <li>
-            <Link to="/" className="flex items-center font-whimsical text-3xl text-white hover:text-[#FFCAD4] transition duration-300 ease-in-out">
-              <FontAwesomeIcon icon={faFacebook} className="mr-2" />
+            <Link to="/" className="flex items-center font-whimsical text-3xl pt-[2.5px] text-white hover:text-[#FFCAD4] transition duration-300 ease-in-out">
+              <FontAwesomeIcon icon={faFacebook} className=" " />
             </Link>
           </li>
           <li>
             <Link to="/" className="flex items-center font-whimsical text-3xl text-white hover:text-[#FFCAD4] transition duration-300 ease-in-out">
-              <FontAwesomeIcon icon={faInstagram} className="mr-2" />
+              <FontAwesomeIcon icon={faInstagram} className=" fa-lg" />
             </Link>
           </li>
         </ul> 
