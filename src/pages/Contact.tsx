@@ -7,7 +7,7 @@ import Wrapper from '../components/Wrapper';
 const Contact: React.FC = () => {
   return (
     <PageCard>
-      <Wrapper>
+      <Wrapper className='h-[500px] w-[500px]'>
       <PageHeader title="Contact Us"/>
       <TextDisplay text="Have questions or inquiries? We're here to help!"/>
       <TextDisplay text="Feel free to reach out to us via"/>
