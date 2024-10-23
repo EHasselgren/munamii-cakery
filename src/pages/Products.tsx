@@ -15,7 +15,7 @@ const Products: React.FC = () => {
     const fetchData = async () => {
       try {
         const cupcakeResponse = await axios.get('http://localhost:5000/api/cupcakes');
-        const weddingCakeResponse = await axios.get('http://localhost:5000/api/wedding-cakes'); 
+        const weddingCakeResponse = await axios.get('http://localhost:5000/api/weddingcakes'); 
 
         console.log("Cupcake Response: ", cupcakeResponse.data);
         console.log("Wedding Cake Response: ", weddingCakeResponse.data);

@@ -24,7 +24,7 @@ const Home: React.FC = () => {
     const fetchData = async () => {
       try {
         const cupcakeResponse = await axios.get('http://localhost:5000/api/cupcakes'); 
-        const weddingCakeResponse = await axios.get('http://localhost:5000/api/wedding-cakes'); 
+        const weddingCakeResponse = await axios.get('http://localhost:5000/api/weddingcakes'); 
         
         setCupcakes(cupcakeResponse.data); 
         setWeddingCakes(weddingCakeResponse.data); 

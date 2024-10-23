@@ -4,11 +4,12 @@ interface ProductCardProps {
   title: string;
   price: string;
   image: string;
-  onAddToBag: (productId: number) => Promise<void>;
+  onAddToBag: (productId: number, itemType: string) => Promise<void>; 
   id: number;
+  itemType: string; 
 }
 
-const ProductCard: React.FC<ProductCardProps> = ({ title, price, image, onAddToBag, id }) => {
+const ProductCard: React.FC<ProductCardProps> = ({ title, price, image, onAddToBag, id, itemType }) => { 
   const [isHovered, setIsHovered] = useState(false);
 
   const handleMouseEnter = () => {
@@ -38,7 +39,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ title, price, image, onAddToB
       </div>
  
       <button
-        onClick={() => onAddToBag(id)}
+        onClick={() => onAddToBag(id, itemType)}
         className="bg-[#008080]  text-white font-bold py-2 mb-3 mx-4 rounded hover:bg-[white] hover:text-[#008080] transition duration-200"
       >
         Add to Bag

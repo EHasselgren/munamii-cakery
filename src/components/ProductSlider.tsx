@@ -6,7 +6,7 @@ import axios from 'axios';
 
 interface ProductSliderProps {
   title: string;
-  products: { id: number; title: string; price: string; image: string }[];
+  products: { id: number; title: string; price: string; image: string; type: string }[]; 
   settings?: object;
   slidesToShow?: number;
   className?: string;
@@ -27,7 +27,7 @@ const ProductSlider: React.FC<ProductSliderProps> = ({
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 4000,
-    nextArrow: <SampleNextArrow to="next"/>,
+    nextArrow: <SampleNextArrow to="next" />,
     prevArrow: <SamplePrevArrow to="prev" />,
 
     responsive: [
@@ -48,21 +48,28 @@ const ProductSlider: React.FC<ProductSliderProps> = ({
     ],
     ...settings,
   };
+  const handleAddToBag = async (productId: number, itemType: string) => {
+    const userId = 'guest_user_123'; 
 
-  const handleAddToBag = async (productId: number) => {
     try {
-      // Make a POST request to add the product to the shopping bag
-      await axios.post('/api/shoppingBag', { productId });
-      console.log(`Product ${productId} added to the shopping bag!`);
+      const response = await axios.post('http://localhost:5000/api/shoppingbag', {
+        userId,
+        itemId: productId,
+        itemType, 
+        quantity: 1,
+      });
+
+      console.log(`Product ${productId} added to the shopping bag!`, response.data);
     } catch (error) {
       console.error('Failed to add product to the shopping bag', error);
     }
-  };
+};
+
 
   return (
     <div className={`mt-8 ${className} relative py-4`}>
       <h3 className="text-4xl font-whimsical font-semibold mb-12 text-[#008080] text-center">{title}:</h3>
-      <Slider {...sliderSettings} className="rounded-lg "> 
+      <Slider {...sliderSettings} className="rounded-lg"> 
         {products.map(product => (
           <div key={product.id} className=""> 
             <ProductCard
@@ -70,6 +77,7 @@ const ProductSlider: React.FC<ProductSliderProps> = ({
               price={product.price}
               image={product.image}
               id={product.id} 
+              itemType={product.type} 
               onAddToBag={handleAddToBag}
             />
           </div>

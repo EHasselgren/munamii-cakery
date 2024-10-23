@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import TextDisplay from '../components/TextDisplay';
-import ProductCard from '../components/ProductCard';
 
 interface ShoppingBagItem {
   _id: string;
@@ -19,8 +18,9 @@ const ShoppingBag: React.FC = () => {
   useEffect(() => {
     const fetchShoppingBag = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/shopping-bag');
-        setItems(response.data);
+        const userId = 'guest_user_123'; 
+        const response = await axios.get(`http://localhost:5000/api/shoppingbag/${userId}`);
+        setItems(response.data.items); 
       } catch (error) {
         console.error('Error fetching shopping bag:', error);
       }
@@ -31,7 +31,7 @@ const ShoppingBag: React.FC = () => {
 
   const handleRemoveItem = async (id: string) => {
     try {
-      await axios.delete(`http://localhost:5000/api/shopping-bag/${id}`);
+      await axios.delete(`http://localhost:5000/api/shoppingbag/${id}`);
       setItems(items.filter(item => item._id !== id));
     } catch (error) {
       console.error('Error removing item:', error);
@@ -47,7 +47,7 @@ const ShoppingBag: React.FC = () => {
         <div className="flex flex-wrap justify-center">
           {items.map(item => (
             <div key={item._id} className="flex flex-col items-center">
-          <h1> {item.productId.title}</h1>
+              <h1>{item.productId.title}</h1>
               <div className="text-center mt-2">
                 <p className="text-xl font-bold text-[#008080]">Quantity: {item.quantity}</p>
                 <button 

@@ -11,33 +11,33 @@ const Header: React.FC = () => {
           <img
             src="/images/munamiiLogo.png"
             alt="Munamii Logo"
-            className="h-[100px] left-0 top-0 object-contain"
+            className="h-[50px] left-0 top-0 object-contain"
           />
         </div>
         <ul className="flex space-x-6 justify-between top-0">
           <li>
-            <Link to="/" className="font-whimsical text-5xl text-white hover:text-[#FFCAD4] transition duration-300 ease-in-out">
+            <Link to="/" className="font-whimsical text-3xl text-white hover:text-[#FFCAD4] transition duration-300 ease-in-out">
               Home
             </Link>
           </li>
           <li>
-            <Link to="/about" className="font-whimsical text-5xl text-white hover:text-[#FFCAD4] transition duration-300 ease-in-out">
+            <Link to="/about" className="font-whimsical text-3xl text-white hover:text-[#FFCAD4] transition duration-300 ease-in-out">
               About Us
             </Link>
           </li>
           <li>
-            <Link to="/products" className="font-whimsical text-5xl text-white hover:text-[#FFCAD4] transition duration-300 ease-in-out">
+            <Link to="/products" className="font-whimsical text-3xl text-white hover:text-[#FFCAD4] transition duration-300 ease-in-out">
               Products
             </Link>
           </li>
           <li>
-            <Link to="/contact" className="font-whimsical text-5xl text-white hover:text-[#FFCAD4] transition duration-300 ease-in-out">
+            <Link to="/contact" className="font-whimsical text-3xl text-white hover:text-[#FFCAD4] transition duration-300 ease-in-out">
               Contact
             </Link>
           </li>
           <li>
             <Link to="/shoppingBag" className="flex items-center space-x-2 font-whimsical text-5xl text-white hover:text-[#FFCAD4] transition duration-300 ease-in-out">
-              <FontAwesomeIcon icon={faShoppingBag} className="text-5xl" />
+              <FontAwesomeIcon className="fa-sm" icon={faShoppingBag}/>
             </Link>
           </li>
         </ul>
