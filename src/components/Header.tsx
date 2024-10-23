@@ -37,7 +37,7 @@ const Header: React.FC = () => {
           </li>
           <li>
             <Link to="/shoppingBag" className="flex items-center space-x-2 font-whimsical text-5xl text-white hover:text-[#FFCAD4] transition duration-300 ease-in-out">
-              <FontAwesomeIcon className="fa-sm" icon={faShoppingBag}/>
+              <FontAwesomeIcon className="fa-xs" icon={faShoppingBag}/>
             </Link>
           </li>
         </ul>
