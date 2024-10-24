@@ -7,7 +7,7 @@ import Wrapper from '../components/Wrapper';
 const Bag: React.FC = () => {
     return (
         <PageCard>
-            <Wrapper className='h-[180px] w-[180px]'>
+            <Wrapper className='h-[15rem] w-[15rem]'>
             <PageHeader title='Your shopping bag'/>
             </Wrapper>
                 <ShoppingBag />
