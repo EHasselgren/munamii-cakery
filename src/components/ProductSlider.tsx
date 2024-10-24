@@ -5,7 +5,7 @@ import { SampleNextArrow, SamplePrevArrow } from './Arrow';
 
 interface ProductSliderProps {
   title: string;
-  products: { id: number; title: string; price: string; image: string; type: string }[]; 
+  products: { _id: string; title: string; price: string; image: string; type: string }[]; 
   settings?: object;
   slidesToShow?: number;
   className?: string;
@@ -49,19 +49,23 @@ const ProductSlider: React.FC<ProductSliderProps> = ({
 
   return (
     <div className={`${className} relative py-4`}>
-      <h3 className="text-4xl font-whimsical font-semibold mb-2 text-[#008080] text-center">{title}:</h3>
-      <Slider {...sliderSettings} className="rounded-lg"> 
-        {products.map(product => (
-          <div key={`${product.id}`} className=""> 
-            <ProductCard
-              title={product.title}
-              price={product.price}
-              image={product.image}
-              id={product.id} 
-              itemType={product.type} 
-            />
-          </div>
-        ))}
+      <h3 className="text-4xl font-whimsical font-semibold mb-2 text-[#008080] text-center">
+        {title}:
+      </h3>
+      <Slider {...sliderSettings} className="rounded-lg">
+        {products.map(product => {
+          return (
+            <div key={`${product._id}`}>
+              <ProductCard
+                title={product.title}
+                price={product.price}
+                imagePath={product.image}
+                _id={product._id}
+                itemType={product.type} 
+/>
+</div>
+          );
+        })}
       </Slider>
     </div>
   );

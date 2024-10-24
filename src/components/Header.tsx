@@ -11,7 +11,7 @@ const Header: React.FC = () => {
           <img
             src="/images/munamiiLogo.png"
             alt="Munamii Logo"
-            className="h-[50px] left-0 top-0 object-contain"
+            className="h-[3.125rem] left-0 top-0 object-contain"
           />
         </div>
         <ul className="flex space-x-6 justify-between top-0">

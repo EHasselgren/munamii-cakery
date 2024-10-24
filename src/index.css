@@ -19,9 +19,9 @@ code {
     
     }
 
-.arrows{
-height:20px;
-width:20px;
-margin: 1px;
-
-}
+    .arrows {
+      height: 1.25rem;
+      width: 1.25rem;
+      margin: 0.0625rem;
+  }
+  
