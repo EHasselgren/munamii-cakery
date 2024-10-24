@@ -79,7 +79,7 @@ const ShoppingBag: React.FC = () => {
   return (
     <div className="p-4 max-w-6xl mx-auto">
       {shoppingBag.length === 0 ? (
-        <p className="text-gray-500">No items in your bag</p>
+        <p className="text-white text-semibold text-3xl flex justify-center mb-8">No items in your bag!</p>
       ) : (
         <div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
