@@ -33,16 +33,20 @@ const ShoppingBag: React.FC = () => {
 
   const handleConfirmPurchase = async () => {
     try {
-      const userId = 'some-user-id';
+      const userId = 'some-user-id'; // placeholder code, wed need to setup login etc to manage this correctly
 
-      const response = await fetch('/api/shoppingbag', {
+      const response = await fetch('http://localhost:5000/api/shoppingbag', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
           userId,
-          items: shoppingBag,
+          items: shoppingBag.map(item => ({
+            itemId: item.id,
+            itemType: item.itemType,
+            quantity: item.quantity,
+          })),
         }),
       });
 
