@@ -16,12 +16,11 @@ const ProductSlider: React.FC<ProductSliderProps> = ({
   settings = {},
   className = '',
 }) => {
-  // Default settings for the slider with responsive options
   const sliderSettings = {
     dots: false,
     infinite: true,
     speed: 400,
-    slidesToShow: 6, // Default to 4 slides for larger screens
+    slidesToShow: 6, 
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 4000,

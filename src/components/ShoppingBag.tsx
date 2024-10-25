@@ -33,7 +33,7 @@ const ShoppingBag: React.FC = () => {
 
   const handleConfirmPurchase = async () => {
     try {
-      const userId = 'some-user-id'; // placeholder code, wed need to setup login etc to manage this correctly
+      const userId = 'some-user-id'; // placeholder code, we'd need to setup login etc to manage this correctly
 
       const response = await fetch('http://localhost:5000/api/shoppingbag', {
         method: 'POST',
