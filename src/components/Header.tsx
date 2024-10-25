@@ -1,43 +1,71 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faShoppingBag } from '@fortawesome/free-solid-svg-icons';
+import { faShoppingBag, faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 
 const Header: React.FC = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => setIsOpen(!isOpen);
+  
+  // Close the menu when a link is clicked
+  const handleLinkClick = () => {
+    setIsOpen(false);
+  };
+
   return (
-    <header className="bg-[#008080] p-3 shadow-lg w-full">
+    <header className="bg-[#008080] p-3 shadow-lg w-full relative">
       <nav className="flex justify-between items-center w-full">
         <div className="flex-shrink-0">
           <img
             src="/images/munamiiLogo.png"
             alt="Munamii Logo"
-            className="h-[3.125rem] left-0 top-0 object-contain"
+            className="h-[3.125rem] object-contain"
           />
         </div>
-        <ul className="flex space-x-6 justify-between top-0">
+        <button 
+          onClick={toggleMenu} 
+          className="text-white text-3xl md:hidden focus:outline-none"
+          aria-label="Toggle menu"
+        >
+          <FontAwesomeIcon icon={isOpen ? faTimes : faBars} />
+        </button>
+
+        <ul className={`flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-6 md:flex ${isOpen ? 'flex' : 'hidden'} absolute md:static bg-[#008080] md:bg-transparent w-full md:w-auto left-0 top-0 p-5 md:p-0 z-10 items-center text-center`}>
+          {isOpen && (
+            <div className="flex justify-end w-full mb-4">
+              <button 
+                onClick={handleLinkClick} 
+                className="text-white text-3xl"
+                aria-label="Close menu"
+              >
+                <FontAwesomeIcon icon={faTimes} />
+              </button>
+            </div>
+          )}
           <li>
-            <Link to="/" className="font-whimsical text-3xl text-white hover:text-[#FFCAD4] transition duration-300 ease-in-out">
+            <Link to="/" onClick={handleLinkClick} className="font-whimsical text-3xl text-white hover:text-[#FFCAD4] transition duration-300 ease-in-out">
               Home
             </Link>
           </li>
           <li>
-            <Link to="/about" className="font-whimsical text-3xl text-white hover:text-[#FFCAD4] transition duration-300 ease-in-out">
+            <Link to="/about" onClick={handleLinkClick} className="font-whimsical text-3xl text-white hover:text-[#FFCAD4] transition duration-300 ease-in-out">
               About Us
             </Link>
           </li>
           <li>
-            <Link to="/products" className="font-whimsical text-3xl text-white hover:text-[#FFCAD4] transition duration-300 ease-in-out">
+            <Link to="/products" onClick={handleLinkClick} className="font-whimsical text-3xl text-white hover:text-[#FFCAD4] transition duration-300 ease-in-out">
               Products
             </Link>
           </li>
           <li>
-            <Link to="/contact" className="font-whimsical text-3xl text-white hover:text-[#FFCAD4] transition duration-300 ease-in-out">
+            <Link to="/contact" onClick={handleLinkClick} className="font-whimsical text-3xl text-white hover:text-[#FFCAD4] transition duration-300 ease-in-out">
               Contact
             </Link>
           </li>
           <li>
-            <Link to="/shoppingBag" className="flex items-center space-x-2 font-whimsical text-5xl text-white hover:text-[#FFCAD4] transition duration-300 ease-in-out">
-              <FontAwesomeIcon className="fa-xs" icon={faShoppingBag}/>
+            <Link to="/shoppingBag" onClick={handleLinkClick} className="flex items-center justify-center space-x-2 font-whimsical text-5xl md:text-3xl text-white hover:text-[#FFCAD4] transition duration-300 ease-in-out">
+              <FontAwesomeIcon icon={faShoppingBag} />
             </Link>
           </li>
         </ul>

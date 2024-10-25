@@ -7,7 +7,6 @@ interface ProductSliderProps {
   title: string;
   products: { _id: string; title: string; price: string; image: string; type: string }[]; 
   settings?: object;
-  slidesToShow?: number;
   className?: string;
 }
 
@@ -15,14 +14,14 @@ const ProductSlider: React.FC<ProductSliderProps> = ({
   title,
   products,
   settings = {},
-  slidesToShow = 4,
   className = '',
 }) => {
+  // Default settings for the slider with responsive options
   const sliderSettings = {
     dots: false,
     infinite: true,
     speed: 400,
-    slidesToShow,
+    slidesToShow: 6, // Default to 4 slides for larger screens
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 4000,
@@ -30,16 +29,23 @@ const ProductSlider: React.FC<ProductSliderProps> = ({
     prevArrow: <SamplePrevArrow to="prev" />,
     responsive: [
       {
-        breakpoint: 768,
+        breakpoint: 1024, // For tablets and medium screens
         settings: {
-          slidesToShow: Math.min(slidesToShow, 3),
+          slidesToShow: 4,
           slidesToScroll: 1,
         },
       },
       {
-        breakpoint: 480,
+        breakpoint: 768, // For small screens
         settings: {
-          slidesToShow: Math.min(slidesToShow, 1),
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 480, // For very small screens
+        settings: {
+          slidesToShow: 1,
           slidesToScroll: 1,
         },
       },
@@ -53,19 +59,17 @@ const ProductSlider: React.FC<ProductSliderProps> = ({
         {title}:
       </h3>
       <Slider {...sliderSettings} className="rounded-lg">
-        {products.map(product => {
-          return (
-            <div key={`${product._id}`}>
-              <ProductCard
-                title={product.title}
-                price={product.price}
-                imagePath={product.image}
-                _id={product._id}
-                itemType={product.type} 
-/>
-</div>
-          );
-        })}
+        {products.map(product => (
+          <div key={product._id}>
+            <ProductCard
+              title={product.title}
+              price={product.price}
+              imagePath={product.image}
+              _id={product._id}
+              itemType={product.type} 
+            />
+          </div>
+        ))}
       </Slider>
     </div>
   );

@@ -5,7 +5,7 @@ interface TextDisplayProps {
   className?: string;
 }
 
-const TextDisplay: React.FC<TextDisplayProps> = ({ text, className }) => {
+const TextDisplay: React.FC<TextDisplayProps> = ({ text, className = '' }) => {
   return (
     <p className={`font-quicksand font-bold text-[#008080] text-center text-lg leading-relaxed max-w-2xl mx-auto ${className}`}>
       {text}

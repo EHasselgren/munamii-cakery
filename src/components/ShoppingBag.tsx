@@ -96,7 +96,6 @@ const ShoppingBag: React.FC = () => {
                     _id={item.id}
                     itemType={item.itemType}
                     isInShoppingBag={true} 
-                    quantity={item.quantity}
                     onUpdateQuantity={updateBagQuantity}
                     onRemove={(id) => {
                       const updatedBag = shoppingBag.filter(i => i.id !== id);
