@@ -3,6 +3,7 @@ import PageCard from '../components/PageCard';
 import ShoppingBag from '../components/ShoppingBag';
 import PageHeader from '../components/PageHeader';
 import Wrapper from '../components/Wrapper';
+import { getImagePath } from '../utils/imageUtils';
 
 const Bag: React.FC = () => {
     return (
@@ -12,7 +13,7 @@ const Bag: React.FC = () => {
             </Wrapper>
                 <ShoppingBag />
                 <img
-        src='/images/munamiiLogo.png'
+        src={getImagePath('/images/munamiiLogo.png')}
         alt='munamiiLogo'
         className="w-60 h-auto object-cover rounded-full mb-8  mx-auto"
       />

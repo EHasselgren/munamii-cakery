@@ -7,6 +7,7 @@ import PageCard from '../components/PageCard';
 import { homeSliderSettings } from '../utils/sliderSettings';
 import Wrapper from '../components/Wrapper';
 import { endpoints } from '../config/api';
+import { getImagePath } from '../utils/imageUtils';
 
 const Home: React.FC = () => {
   const [cupcakes, setCupcakes] = useState([]);
@@ -49,9 +50,9 @@ const Home: React.FC = () => {
       </Wrapper>
       <ProductSlider title="Our Irresistible Offerings" products={shuffledProducts} settings={homeSliderSettings} />
       <img
-        src='/images/munamiiLogo.png'
+        src={getImagePath('/images/munamiiLogo.png')}
         alt='munamiiLogo'
-        className="w-80 h-auto object-cover rounded-full mb-2 py-6 mx-auto"
+        className="w-80 h-auto object-cover rounded-full mb-8 mt-4 mx-auto"
       />
     </PageCard>
   );

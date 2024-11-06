@@ -3,6 +3,7 @@ import PageCard from '../components/PageCard';
 import PageHeader from '../components/PageHeader';
 import TextDisplay from '../components/TextDisplay';
 import Wrapper from '../components/Wrapper';
+import { getImagePath } from '../utils/imageUtils';
 
 const About: React.FC = () => {
   return (
@@ -14,7 +15,7 @@ const About: React.FC = () => {
       <TextDisplay text="We believe in spreading happiness through our baking, supporting sustainability by sourcing local ingredients whenever possible. This means every delicious bite also supports our community."/>
       </Wrapper>
       <img
-        src='/images/munamiiLogo.png'
+        src={getImagePath('/images/munamiiLogo.png')}
         alt='munamiiLogo'
         className="w-80 h-auto object-cover rounded-full pb-10 mx-auto"
       />

@@ -3,6 +3,7 @@ import PageCard from '../components/PageCard';
 import PageHeader from '../components/PageHeader';
 import TextDisplay from '../components/TextDisplay';
 import Wrapper from '../components/Wrapper';
+import { getImagePath } from '../utils/imageUtils';
 
 const Contact: React.FC = () => {
   return (
@@ -16,7 +17,7 @@ const Contact: React.FC = () => {
       <TextDisplay text="We look forward to creating something special for you!"/>
       </Wrapper>
       <img
-        src='/images/munamiiLogo.png'
+        src={getImagePath('/images/munamiiLogo.png')}
         alt='munamiiLogo'
         className="w-60 h-auto object-cover rounded-full  mx-auto"
       />

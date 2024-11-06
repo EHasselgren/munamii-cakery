@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { toast } from 'react-toastify'; 
 import 'react-toastify/dist/ReactToastify.css';
+import { getImagePath } from '../utils/imageUtils';
 
 interface ShoppingBagItem {
   id: string;
@@ -34,6 +35,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
   onRemove,
 }) => {
   const [shoppingBag, setShoppingBag] = useState<ShoppingBagItem[]>([]);
+  const imageUrl = `${process.env.PUBLIC_URL}${imagePath}`;
 
   useEffect(() => {
     const storedBag = localStorage.getItem('shoppingBag');
@@ -75,10 +77,10 @@ const ProductCard: React.FC<ProductCardProps> = ({
 
 <div className="border bg-white rounded-xl w-[13.75rem] h-[18.75rem] m-4 transition-transform transform hover:scale-105 flex flex-col justify-between overflow-hidden">
       <div className="flex flex-col items-center py-4">
-        <img
-          src={imagePath}
-          alt={title}
-          className="w-[8.75rem] h-[8.75rem] object-cover rounded-full"
+      <img 
+        src={getImagePath(imagePath)} 
+        alt={title}
+        className="w-[8.75rem] h-[8.75rem] object-cover rounded-full"
         />
         <div className="text-center flex-grow">
           <h4 className="text-lg font-bold text-[#008080] font-whimsical mb-2 overflow-hidden whitespace-nowrap text-ellipsis">
