@@ -29,7 +29,7 @@
     "typescript": "^4.9.5",
     "web-vitals": "^2.1.4"
   },
-  "homepage": "https://ehasselgren.github.io/",
+  "homepage": "https://ehasselgren.github.io/munamii-cakery",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
