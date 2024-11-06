@@ -5,19 +5,21 @@ import PageHeader from '../components/PageHeader';
 import TextDisplay from '../components/TextDisplay';
 import ProductSlider from '../components/ProductSlider';
 import { homeSliderSettings } from '../utils/sliderSettings';
+import { getImagePath } from '../utils/imageUtils';
 import Wrapper from '../components/Wrapper';
 import { endpoints } from '../config/api';
 
 const Products: React.FC = () => {
   const [cupcakes, setCupcakes] = useState<any[]>([]);
-  const [weddingCakes, setWeddingCakes] = useState<any[]>([]); 
-
+  const [weddingCakes, setWeddingCakes] = useState<any[]>([]);
+  
   useEffect(() => {
     const fetchData = async () => {
       try {
+        console.log('Fetching from:', endpoints.cupcakes); 
         const cupcakeResponse = await axios.get(endpoints.cupcakes);
         const weddingCakeResponse = await axios.get(endpoints.weddingCakes);
-
+        
         console.log("Cupcake Response: ", cupcakeResponse.data);
         console.log("Wedding Cake Response: ", weddingCakeResponse.data);
         
@@ -27,10 +29,10 @@ const Products: React.FC = () => {
         console.error("Error fetching data: ", error);
       }
     };
-
+    
     fetchData();
-  }, []); 
-
+  }, []);
+  
   return (
     <PageCard>
       <Wrapper>
@@ -41,7 +43,7 @@ const Products: React.FC = () => {
       <ProductSlider title="Delicious Cupcakes" products={cupcakes} settings={homeSliderSettings}/>
       <ProductSlider title="Elegant Wedding Cakes" products={weddingCakes} settings={homeSliderSettings}/>
       <img
-        src='/images/munamiiLogo.png'
+        src={getImagePath('/images/munamiiLogo.png')}
         alt='munamiiLogo'
         className="w-80 h-auto object-cover rounded-full mb-8 mt-4 mx-auto"
       />
