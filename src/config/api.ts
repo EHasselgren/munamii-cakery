@@ -1,6 +1,4 @@
-const API_URL = process.env.NODE_ENV === 'production'
-  ? 'https://munamii-api.onrender.com/api'
-  : 'http://localhost:5000/api';
+const API_URL = 'https://munamii-api.onrender.com/api';
 
 export const endpoints = {
   cupcakes: `${API_URL}/cupcakes`,
