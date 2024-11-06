@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/munamii-cakery/static/css/main.d64f05a7.css",
+    "main.js": "/munamii-cakery/static/js/main.0a367e79.js",
+    "static/js/453.220cd030.chunk.js": "/munamii-cakery/static/js/453.220cd030.chunk.js",
+    "static/media/background2.jpg": "/munamii-cakery/static/media/background2.d0a84b23af65b24ed694.jpg",
+    "static/media/slick.svg": "/munamii-cakery/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "/munamii-cakery/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "/munamii-cakery/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/slick.woff": "/munamii-cakery/static/media/slick.295183786cd8a1389865.woff",
+    "index.html": "/munamii-cakery/index.html",
+    "main.d64f05a7.css.map": "/munamii-cakery/static/css/main.d64f05a7.css.map",
+    "main.0a367e79.js.map": "/munamii-cakery/static/js/main.0a367e79.js.map",
+    "453.220cd030.chunk.js.map": "/munamii-cakery/static/js/453.220cd030.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d64f05a7.css",
+    "static/js/main.0a367e79.js"
+  ]
+}
