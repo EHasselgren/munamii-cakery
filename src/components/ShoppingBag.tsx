@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import ProductCard from './ProductCard'; 
+import { endpoints } from '../config/api';
 
 interface ShoppingBagItem {
   id: string;
@@ -35,7 +36,7 @@ const ShoppingBag: React.FC = () => {
     try {
       const userId = 'some-user-id'; // placeholder code, we'd need to setup login etc to manage this correctly
 
-      const response = await fetch('http://localhost:5000/api/shoppingbag', {
+      const response = await fetch(endpoints.shoppingBag, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

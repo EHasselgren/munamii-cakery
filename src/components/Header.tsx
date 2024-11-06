@@ -8,7 +8,6 @@ const Header: React.FC = () => {
 
   const toggleMenu = () => setIsOpen(!isOpen);
   
-  // Close the menu when a link is clicked
   const handleLinkClick = () => {
     setIsOpen(false);
   };

@@ -6,6 +6,7 @@ import TextDisplay from '../components/TextDisplay';
 import ProductSlider from '../components/ProductSlider';
 import { homeSliderSettings } from '../utils/sliderSettings';
 import Wrapper from '../components/Wrapper';
+import { endpoints } from '../config/api';
 
 const Products: React.FC = () => {
   const [cupcakes, setCupcakes] = useState<any[]>([]);
@@ -14,8 +15,8 @@ const Products: React.FC = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const cupcakeResponse = await axios.get('http://localhost:5000/api/cupcakes');
-        const weddingCakeResponse = await axios.get('http://localhost:5000/api/weddingcakes'); 
+        const cupcakeResponse = await axios.get(endpoints.cupcakes);
+        const weddingCakeResponse = await axios.get(endpoints.weddingCakes);
 
         console.log("Cupcake Response: ", cupcakeResponse.data);
         console.log("Wedding Cake Response: ", weddingCakeResponse.data);
